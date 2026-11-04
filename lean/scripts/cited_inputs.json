@@ -1,0 +1,13 @@
+{
+  "version": "0.70",
+  "project": "025",
+  "note": "The cited results the proof may use (an allowlist for scripts/audit.py). Each item needs name, source, review, and status (refereed or UNREFEREED). This file is a review allowlist, not a proof of source fidelity.",
+  "inputs": [
+    {
+      "name": "Sheil.Cited.coef_half_max",
+      "source": "Theorem 3.4 of the paper [Kr79, Kr80, OR74, SS74]: P. J. O'Hara, R. S. Rodriguez, Proc. Amer. Math. Soc. 44 (1974) 331-335, Theorem 3 (k != n/2); E. B. Saff, T. Sheil-Small, J. London Math. Soc. (2) 9 (1974) 16-22, Theorem 3 (k != n/2); G. K. Kristiansen, J. London Math. Soc. (2) 20 (1979) 300-314, correction (2) 22 (1980) 575-576 (middle coefficient k = n/2; stated by Rahman-Schmeisser 2002 preface p. viii and Hayman-Lingham 2019 Update 4.2). Full quotes in Sheil/Cited/CoefHalfMax.lean.",
+      "review": "Lean text and source quotes checked against the sources before use, and again by an independent reviewer. O'Hara-Rodriguez was read in full; Saff-Sheil-Small was read in full in the authors' galley (7 pages; its page numbers are not the journal's); Kristiansen's proof was not read (paywalled): the middle case rests on the two secondary statements quoted in Sheil/Cited/CoefHalfMax.lean. Stated with Mathlib terms only (no project definition).",
+      "status": "refereed"
+    }
+  ]
+}

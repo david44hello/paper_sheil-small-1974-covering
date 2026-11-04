@@ -1,0 +1,84 @@
+# CLAIM_MAP — project 025 (Sheil-Small's covering problem), short paper = the FINAL text v2.30 (P025_body.tex md5 1538df2f, \longfalse).
+# Columns (TAB): claim id | description (P025_body.tex lines of v2.30) | REQUIRED rows | SUPPORT rows.
+# REQUIRED: ALL comma-listed rows must be proved; claim status = its worst REQUIRED row (PROVED > PROVED FROM CITED >
+# CITED > OPEN). SUPPORT rows (proof steps, helpers) are listed for completeness and do not change the claim's status.
+# Quantifier rule: each printed quantifier and exception was compared with the row's type; a row
+# true WITH an exception does not cover a sentence WITHOUT it (checked for every claim below).
+# NOT COUNTED (no mathematical claim of this paper): history and attributions — abstract l.22-24 (who proved the bound,
+# when); l.47-48 "the definition used by Saff and Sheil-Small"; l.50-52 and 60 (the problem's history, the update);
+# Table "before" column l.71 and 75-78 except its de Bruijn claim (I6) ("we have not found ... stated", "an identity
+# implicit in Saff and Sheil-Small", "asked by Hayman, 1967", who proved what and when, the 1980 correction); Figure 1
+# caption l.99-100 "the question was listed as open under both readings, and nothing was known for the larger class
+# (hatched, ?)"; l.114-119 (Hayman's question, the misprint, who proved which case, later papers); l.122-124 "Each
+# ingredient appears in one of the two 1974 proofs ..." (a quoted result of OR74 Thm 1 / SS74 Thm 7, used by no proof
+# here); l.126 "in print since 1980, although we have not found it stated"; l.128-129 "so any proof of this answer also
+# proves that theorem" (a consequence of I9); l.190-192 "the key step in the usual proof of the Erdos-Lax inequality
+# [La44]", "the easy half of the Schur-Cohn criterion [Sc17, Co22]; see also [Ma66]"; l.264-267 the relation of Lemma 3.2
+# to de Bruijn's theorem ("closely related", "quoted in [OR74, p. 332]", "gives the lemma for polynomials of degree
+# exactly n"); l.313-314 "For k != n/2 this is [OR74, Thm 3] and [SS74, Thm 3]. For k = n/2 it is due to Kristiansen
+# [Kr79, Sect. 2], who works with real trigonometric polynomials whose zeros are all real"; l.319 "this is Conjecture 4
+# of [SS74], applied to T and to -T" and the gap closed in [Kr80]; l.390-391 "The threshold is the same as in [OR74,
+# Section 2, Remark C], where the middle case ... is proved when |a_{n/2}| <= 2|a_n|"; l.392 "due to Kristiansen". The
+# problem quote (l.54-58). Proof-sketch and route wording: abstract l.24-25 ("The new case ... Schur-Cohn Hermitian form
+# ..."), l.131-132 ("by another route, which we now sketch"), l.331-332 (Section 4's route sentence; route checked:
+# thm_4_1 := thm_4_1_of (lem_2_2_b PSD) cor_3_5). Organization and pointers: l.148-151, l.157 (Zenodo), l.164-165,
+# l.256, l.306, "(Figure 2, right/left)" l.131 and l.302-303. Statements of others' theorems are the ONE cited row
+# thm_3_4 (claim T34). Unnamed steps inside proofs are covered by their result's row (Lean follows the route).
+# RETIRED (row kept, not counted): I4 "polynomials whose zeros all lie on the unit circle are the basic examples"
+# (not in the published text); its row lem_2_1_circle still covers L21d.
+# LEAN-STATUS SENTENCE (not a census claim): abstract l.30-31 "The main theorem is also proved in the Lean 4 proof
+# assistant, with the coefficient bound of O'Hara-Rodriguez, Saff-Sheil-Small and Kristiansen taken as given" — AUDIT
+# CHECK: row thm_4_1 is PROVED-FROM-CITED and its only non-standard input is Sheil.Cited.coef_half_max (= Theorem 3.4,
+# row thm_3_4).
+A1	Abstract: Sheil-Small asked whether every self-inversive P maps D onto a domain containing a disc of radius A; the answer is yes (l.13-15); Table l.69-70 "(in particular every self-inversive P)"; l.60-61 "We answer the question in the affirmative"; l.86-87	abs_self_inversive,abs_domain	fig1_inclusions
+A2	Abstract: every non-constant P whose coefficients have the same moduli when read in reverse order maps D onto a DOMAIN containing an open disc of radius A (l.15-16; Table l.69-70; l.84-86) — thm_4_1 at n = deg P	thm_4_1,abs_domain
+A3	Abstract: the class contains both the self-inversive P (zeros symmetric w.r.t. the circle) and the P whose zeros, with multiplicity, are symmetric under reciprocals (the literal reading), so the theorem answers the question under either reading (l.16-19; l.86; l.106-110; Figure 1 caption l.96-99)	fig1_inclusions,lem_2_1_mirror,abs_zeros_conj_inv,abs_zeros_inv,abs_plus_minus	lem_2_1_b
+A4	Abstract l.19-20 and l.86-87, 110-111, 435: the radius A cannot be increased; the disc must be taken open (1+z^n: A=1, P(D)=D(1,1))	ex_5_1	ex_5_2
+A5	Abstract: all zeros on the circle -> the largest disc in the image has radius exactly M/2 (l.20-21; Table l.73-74; l.88-90)	thm_3_1	exists_max_circle
+A6	Abstract: for these polynomials the question is equivalent to asking whether every coefficient has modulus at most M/2 (l.21-22); Table l.73-74 "equivalent to M >= 2A"	thm_3_1,abs_M_two_A_iff,rem_4_2_equiv
+I1	Intro: P*(z) = z^n conj P(1/conj z) = sum conj(a_{n-k}) z^k (l.43; also l.163)	pstar_eval
+I2	Intro: for P(0) != 0, self-inversive iff the zeros are symmetric w.r.t. the circle, with multiplicities (l.45-47)	lem_2_1_a
+I3	Intro: every self-inversive polynomial satisfies lambda = 1 after multiplication by a suitable constant of modulus 1 (l.48-49)	intro_normalize_lambda
+I5	Intro: 1+3iz+z^2 satisfies a_{n-k} = +-a_k but is not self-inversive (l.107-108)	intro_ex_three_i
+I6	Intro and Table: de Bruijn's covering theorem at a point of maximum modulus, where zeta P'(zeta) = (n/2) P(zeta), gives the disc of radius M/2 (l.75-76, 121-122)	prop_3_3	lem_3_2,lem_3_2_closed
+I7	Intro: "That no open disc of radius larger than M/2 lies in P(D) is elementary" (no cited input) (l.125)	thm_3_1
+I8	Intro: the circle case of the question can be assembled from results in print (l.125-126); Figure 1 caption: for the inner oval M >= 2A, with de Bruijn's theorem, gives a disc of radius A (l.100-101)	cor_3_5
+I9	Intro: by Theorem 3.1, a positive answer for self-inversive polynomials implies the theorem of OR74, SS74, Kr79 (l.127-129; the row assumes the covering only for zeros on the circle, a subclass, so it is at least as strong)	intro_covering_implies_coef
+I10	Intro: for self-inversive P the disc of radius M/2 still exists (Proposition 3.3), but M/2 may be smaller than A: 1+4z+z^2 has M/2 = 3, A = 4 (l.129-131)	prop_3_3,intro_ex_four
+I11	Intro, the idea of the proof (l.134-146): zero-free H has |zH'| <= |nH - zH'| on the circle and a PSD Schur-Cohn form sum K_ij z^i conj(eta)^j whose K_ij are explicit in the h_k (Lemma 2.2); the first fact at a maximum point places every omitted value at distance >= M/2 from P(zeta)/2; a_0 = 0: every omitted w != 0, a 2x2 minor of (K_ij) gives |w| >= A, D(0,A) in P(D); normalize a_0 = a_n = 1; the diagonal entries K_jj all equal |1-w|^2-1 >= 0, so |1-w| >= 1, D(1,1) in P(D) (every A) and A = 1 is settled; A > 1: E = a_{n-j}/conj(a_j), |E| = 1, the minor gives |w-(1+E)| >= A unless w = 1-E, so D(1+E,A) minus w_* is taken; w_* omitted -> P - w_* has all zeros on the circle and the same A (then Theorem 3.1 with M >= 2A applies)	lem_2_2_a,lem_2_2_b,lem_2_2_c,prop_3_3,thm_4_1_case1,thm_4_1_normalize,thm_4_1_case2_diag,sketch_disc_one,eq_minor,eq_punctured,thm_4_1_wstar	cor_3_5
+F1	Figure 1: the two symmetry classes lie in the class (eq:mirror); the circle class lies in the self-inversive class (caption l.96-99)	fig1_inclusions
+F2	Figure 1: every drawn region has a member (fig_classes_pair.tex: ovals overlap as the classes do; 1+z^2 in all three)	fig1_regions
+F3	Figure 1, right: Theorem 4.1 gives a disc of radius A for every non-constant member; Theorem 3.1 the exact largest radius M/2 for the inner oval (l.101-102)	thm_4_1,thm_3_1
+S2	Section 2: H* for deg H <= n; (H*)* = H; |H*| = |H| on the circle (l.162-164)	pstar_eval,pstar_pstar,pstar_norm_circle
+L21a	Lemma 2.1(a) (l.168, 170-171)	lem_2_1_a
+L21b	Lemma 2.1(b) (l.168, 172-173)	lem_2_1_b
+L21c	Lemma 2.1: in both cases |a_k| = |a_{n-k}| (l.175)	lem_2_1_mirror
+L21d	Lemma 2.1: all zeros on the circle -> self-inversive (l.175-176, proof l.187)	lem_2_1_circle
+N1	Before Lemma 2.2 (l.190): part (a) says, on |z| = 1, |H'(z)| <= |(H*)'(z)| (H of degree <= n with no zero in D)	lem_2_2_a_pstar	lem_2_2_a
+L22f	Lemma 2.2, eq. (eq:factor) (l.195-199)	lem_2_2_factor
+L22a	Lemma 2.2(a) (l.202); equality at a zero on the circle (l.230)	lem_2_2_a,lem_2_2_a_zero
+L22b	Lemma 2.2(b): K(z,eta) is a polynomial in z, conj eta with PSD coefficient matrix (l.203-208); eq. (eq:one-factor) (l.232-235)	lem_2_2_b,eq_one_factor	schurCohn_unique
+L22c	Lemma 2.2(c), eq. (eq:entries) (l.209-213)	lem_2_2_c
+T31	Theorem 3.1 (l.258-262)	thm_3_1	exists_max_circle
+L32	Lemma 3.2 (l.269-272): a single boundary point forces a whole disc into the image (l.264), also for degree less than n (l.267)	lem_3_2	lem_3_2_closed
+P33	Proposition 3.3 with "in particular F'(zeta) != 0" (l.280-283, 292-293)	prop_3_3
+T34	Theorem 3.4 [Kr79, Kr80, OR74, SS74] (l.308-311) — the ONE cited result (Sheil.Cited.coef_half_max)	thm_3_4
+N2	Note after Theorem 3.4 (l.314-319): m = n/2; P* = lambda P, |lambda| = 1 (Lemma 2.1); Q(theta) = e^{-im theta} P(e^{i theta}) has conj Q = lambda Q; T = cQ is real when c^2 = lambda; T is a real trigonometric polynomial of exact degree m (top coefficient c a_n != 0) whose 2m zeros in a period are all real (stated through the zeros of P: 2m with multiplicity, T = 0 iff P(e^{i theta}) = 0, every zero real, a period's zeros one-to-one with P's); max |T| = M(P); constant term t_0 = c a_{n/2}; "the case k = n/2 says that ... |t_0| <= (1/2) max|T|" (the middle case iff |c a_m| <= sup|T|/2; the bound itself is T34)	coef_note_trig	lem_2_1_circle,thm_3_4
+C35	Corollary 3.5 (l.321-323)	cor_3_5
+T41	Theorem 4.1 (l.334-340)	thm_4_1
+T41c1	Theorem 4.1, Case 1 (a_0 = 0) (l.346-353)	thm_4_1_case1
+T41n	Theorem 4.1, Case 2, the normalization; it multiplies every radius and A by 1/|a_0| and preserves (eq:mirror) (l.355-357)	thm_4_1_normalize
+T41d	Theorem 4.1, Case 2: constant diagonal d = |1-w|^2-1, d >= 0 i.e. |w-1| >= 1 for every omitted w, A = 1 gives D(1,1) (l.359-365)	thm_4_1_case2_diag
+T41m	Theorem 4.1, eq. (eq:minor) (l.367-372)	eq_minor
+T41p	Theorem 4.1, eq. (eq:punctured): every omitted value other than w_* = 1-E lies outside D(1+E,A) (l.373-378)	eq_punctured
+T41w	Theorem 4.1, w_* omitted: S = P - w_* has all zeros on the circle, A(S) = A, P(D) = S(D) + w_* (l.380-384; l.380 "if w_* in P(D) ... we are done")	thm_4_1_wstar	rem_4_2_wstar_taken
+R42a	Remark 4.2: |w_* - (1+E)| = 2, so w_* is in D(1+E,A) only when A > 2, i.e. A > 2|a_0| before the normalization (l.388-389)	rem_4_2_dist	thm_4_1_normalize
+R42b	Remark 4.2: Theorem 3.4 is needed only when A > 2|a_0| and w_* is omitted; otherwise (eq:punctured) already gives D(1+E,A) in P(D) (l.389-390)	rem_4_2_no_coef,rem_4_2_wstar_taken
+R42c	Remark 4.2: if A is attained at j != n/2, then A(S) = |a_j| with j != n/2, and [OR74, Thm 3] or [SS74, Thm 3] suffices (l.391-392)	rem_4_2_off_middle	thm_4_1_wstar
+R42d	Remark 4.2: the middle case of Theorem 3.4 is used only when n is even, |a_{n/2}| is strictly larger than every other |a_k| and than 2|a_0|, and w_* is omitted (l.392-393)	rem_4_2_middle_used_only	rem_4_2_middle_only
+R42e	Remark 4.2: the middle case cannot be bypassed — for zeros on the circle Theorem 4.1 is equivalent to Theorem 3.4, so every proof of Theorem 4.1 also proves the middle case (l.393-395)	rem_4_2_equiv,intro_covering_implies_coef
+S5	Section 5 opener (l.400-401), l.111-112 and l.438: the radius A in Theorem 4.1 cannot be increased, and this remains true when A is large compared with |a_0|	ex_5_1,ex_5_2
+FG2a	Figure 2, left: (1+z)^2, the cardioid rho = 2+2cos psi bounds P(D); zeros on the circle; M = 4, A = 2; the largest disc is D(2,2), radius M/2 = A (caption l.426-428, label l.412, picture l.405-413)	fig2_cardioid
+FG2b	Figure 2, right: 1+4z+z^2, the limacon rho = 4+2cos psi bounds P(D); strip -2 < Re w < 6; D(2,4) inside, largest radius A = 4; the grey disc D(3,3), of radius M/2 (M = 6), inside; label "A = 4, M = 6" (caption l.428-430, label l.424, picture l.415-425)	fig2_limacon,intro_ex_four
+E51	Example 5.1: 1+z^n, A = 1, P(D) = D(1,1), no open disc of radius > 1, no closed disc of radius 1 (l.433-436)	ex_5_1
+E52	Example 5.2: 1+a z^m+z^{2m}, a >= 4: circle formula, Re P, derivative a+4x >= 0, range [2-a,2+a], strip of width 2a, radius <= a = A; E = 1, w_* = 0 is taken (P has a zero in D), the disc of the proof is D(2,a) (l.440-451)	ex_5_2

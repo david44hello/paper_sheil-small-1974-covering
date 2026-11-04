@@ -1,0 +1,2 @@
+# OPEN_ROWS.txt — rows allowed to stay unproved; the final gate (scripts/check.sh --final) checks this list.
+# EMPTY: every row of Sheil/Paper/Statements.lean is proved.

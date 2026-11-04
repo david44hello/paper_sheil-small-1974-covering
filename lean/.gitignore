@@ -1,0 +1,4 @@
+/.lake/
+/logs/
+/scripts/.check-test.*/
+/scripts/audit_output.log
