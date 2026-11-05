@@ -1,17 +1,16 @@
 {
   "version": "0.30",
-  "project": "025",
   "namespace": "Sheil.Paper",
   "counts": {
     "PROVED": 47,
     "CITED": 1,
-    "PROVED-FROM-CITED": 6
+    "PROVED-FROM-CITED": 7
   },
   "claims": [
     {
       "name": "pstar_eval",
       "doc": "P025_body.tex:43 and 163: \"`H*(z) = z^n conj(H(1/z\u0304))`\" for `H` of degree at most `n` (at `z \u2260 0`).",
-      "line": 37,
+      "line": 38,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.pstar_eval",
       "file": "Sheil/Paper/Statements.lean",
@@ -26,7 +25,7 @@
     {
       "name": "pstar_pstar",
       "doc": "P025_body.tex:164: \"`(H*)* = H`\".",
-      "line": 41,
+      "line": 42,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.pstar_pstar",
       "file": "Sheil/Paper/Statements.lean",
@@ -41,7 +40,7 @@
     {
       "name": "pstar_norm_circle",
       "doc": "P025_body.tex:164: \"`|H*(z)| = |H(z)|` when `|z| = 1`\".",
-      "line": 45,
+      "line": 46,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.pstar_norm_circle",
       "file": "Sheil/Paper/Statements.lean",
@@ -56,7 +55,7 @@
     {
       "name": "intro_normalize_lambda",
       "doc": "P025_body.tex:48-49: \"Sheil-Small's book requires `\u03bb = 1`; every self-inversive polynomial satisfies this after multiplication by a suitable constant of modulus 1\": `P* = \u03bbP` with `|\u03bb| = 1` for some `\u03bb` iff `(\u03bcP)* = \u03bcP` for some `|\u03bc| = 1`.",
-      "line": 51,
+      "line": 52,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.intro_normalize_lambda",
       "file": "Sheil/Paper/Statements.lean",
@@ -71,7 +70,7 @@
     {
       "name": "intro_ex_three_i",
       "doc": "P025_body.tex:106-108: \"`1 + 3iz + z^2` is of this kind [`a_{n-k} = \u00b1a_k`] but is not self-inversive\".",
-      "line": 56,
+      "line": 57,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.intro_ex_three_i",
       "file": "Sheil/Paper/Statements.lean",
@@ -85,8 +84,8 @@
     },
     {
       "name": "intro_ex_four",
-      "doc": "P025_body.tex:129-131: \"For self-inversive `P` the disc of radius `M/2` still exists, but `M/2` may be smaller than `A`: for `1 + 4z + z^2` we have `M/2 = 3` and `A = 4`\"; also Figure 2's label \"`1+4z+z^2`: `A=4`, `M=6`\" (P025_body.tex:424).",
-      "line": 63,
+      "doc": "P025_body.tex:129-131: \"For self-inversive `P` the disc of radius `M/2` still exists (Proposition 3.3), but `M/2` may be smaller than `A`: for `1 + 4z + z^2` we have `M/2 = 3` and `A = 4`\"; also Figure 2's label \"`1+4z+z^2`: `A=4`, `M=6`\" (P025_body.tex:424).",
+      "line": 64,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.intro_ex_four",
       "file": "Sheil/Paper/Statements.lean",
@@ -101,7 +100,7 @@
     {
       "name": "abs_domain",
       "doc": "Abstract P025_body.tex:15-16: a non-constant `P` maps `\ud835\udd3b` onto a DOMAIN (open and connected).",
-      "line": 67,
+      "line": 68,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.abs_domain",
       "file": "Sheil/Paper/Statements.lean",
@@ -116,7 +115,7 @@
     {
       "name": "abs_M_two_A_iff",
       "doc": "Abstract P025_body.tex:21-22: \"the question is therefore equivalent to asking whether every coefficient has modulus at most half this maximum\": `M \u2265 2A` iff `|a_k| \u2264 M/2` for every `k`.",
-      "line": 72,
+      "line": 73,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.abs_M_two_A_iff",
       "file": "Sheil/Paper/Statements.lean",
@@ -130,8 +129,8 @@
     },
     {
       "name": "fig1_inclusions",
-      "doc": "Figure 1: both symmetry classes lie in the class (eq:mirror), and the circle class lies in the self-inversive class (caption P025_body.tex:96-99; Lemma 2.1).",
-      "line": 82,
+      "doc": "Figure 1: both symmetry classes lie in the class (eq:mirror), and the circle class lies in the self-inversive class (caption P025_body.tex:97-99; Lemma 2.1).",
+      "line": 83,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.fig1_inclusions",
       "file": "Sheil/Paper/Statements.lean",
@@ -145,8 +144,8 @@
     },
     {
       "name": "fig1_regions",
-      "doc": "Figure 1: every region the figure draws has a member (\"ovals overlap as the classes do (1+z^2 is in all three)\").",
-      "line": 88,
+      "doc": "RETIRED: the regions of an earlier Figure 1, no longer printed. Kept as a Lean example, not counted. Witnesses that separate the classes: `1 + z^2` is in all three; `z - i` has all zeros on the circle and is not `a_{n-k} = \u00b1a_k`; `1 + 4z + z^2` is self-inversive and `a_{n-k} = \u00b1a_k` with not all zeros on the circle; `z^2 - (5/2) i z - 1` is self-inversive only; `1 + 3iz + z^2` is `a_{n-k} = \u00b1a_k` only; `1 + z + i z^2` has only condition (eq:mirror).",
+      "line": 92,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.fig1_regions",
       "file": "Sheil/Paper/Statements.lean",
@@ -161,7 +160,7 @@
     {
       "name": "lem_2_1_a",
       "doc": "Lemma 2.1(a), P025_body.tex:168, 170-171.",
-      "line": 100,
+      "line": 104,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_1_a",
       "file": "Sheil/Paper/Statements.lean",
@@ -176,7 +175,7 @@
     {
       "name": "lem_2_1_b",
       "doc": "Lemma 2.1(b), P025_body.tex:168, 172-173 (one `\u03b5` for all `k`).",
-      "line": 106,
+      "line": 110,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_1_b",
       "file": "Sheil/Paper/Statements.lean",
@@ -191,7 +190,7 @@
     {
       "name": "lem_2_1_mirror",
       "doc": "Lemma 2.1, P025_body.tex:175: \"In both cases `|a_k| = |a_{n-k}|` for every `k`.\"",
-      "line": 110,
+      "line": 114,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_1_mirror",
       "file": "Sheil/Paper/Statements.lean",
@@ -206,7 +205,7 @@
     {
       "name": "lem_2_1_circle",
       "doc": "Lemma 2.1, P025_body.tex:175-176 (proof P025_body.tex:187): \"Every polynomial of degree `n \u2265 1` with all its zeros on the unit circle is self-inversive.\"",
-      "line": 115,
+      "line": 119,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_1_circle",
       "file": "Sheil/Paper/Statements.lean",
@@ -221,7 +220,7 @@
     {
       "name": "lem_2_2_factor",
       "doc": "Lemma 2.2, eq. (eq:factor), P025_body.tex:195-199: `\u03b2_1, \u2026, \u03b2_n` with `|\u03b2_l| \u2264 1`, `H = h_0 \u220f (1 - \u03b2\u0304_l z)`, `H* = h\u0304_0 \u220f (z - \u03b2_l)`.",
-      "line": 120,
+      "line": 124,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_2_factor",
       "file": "Sheil/Paper/Statements.lean",
@@ -236,7 +235,7 @@
     {
       "name": "lem_2_2_a",
       "doc": "Lemma 2.2(a), P025_body.tex:202: `|zH'(z)| \u2264 |nH(z) - zH'(z)|` on the unit circle.",
-      "line": 127,
+      "line": 131,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_2_a",
       "file": "Sheil/Paper/Statements.lean",
@@ -251,7 +250,7 @@
     {
       "name": "lem_2_2_a_pstar",
       "doc": "P025_body.tex:190 (claim N1): \"Part (a) is a classical inequality (on `|z|=1` it says `|H'(z)| \u2264 |(H^*)'(z)|` ...)\", for `H` of degree at most `n` with no zero in `\ud835\udd3b` (the hypotheses of Lemma 2.2) and `|z| = 1`.",
-      "line": 134,
+      "line": 138,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_2_a_pstar",
       "file": "Sheil/Paper/Statements.lean",
@@ -266,7 +265,7 @@
     {
       "name": "lem_2_2_a_zero",
       "doc": "P025_body.tex:230: \"At a zero of `H` on the circle the inequality in (a) is an equality\" (proved at every zero).",
-      "line": 140,
+      "line": 144,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_2_a_zero",
       "file": "Sheil/Paper/Statements.lean",
@@ -281,7 +280,7 @@
     {
       "name": "eq_one_factor",
       "doc": "Eq. (eq:one-factor), P025_body.tex:232-235 (\"one checks by multiplying out\"; proved for every `\u03b2`).",
-      "line": 145,
+      "line": 149,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.eq_one_factor",
       "file": "Sheil/Paper/Statements.lean",
@@ -296,7 +295,7 @@
     {
       "name": "lem_2_2_b",
       "doc": "Lemma 2.2(b), P025_body.tex:203-208: `K(z,\u03b7) = (H(z) conj H(\u03b7) - H*(z) conj H*(\u03b7)) / (1 - z \u03b7\u0304) = \u03a3 K_ij z^i \u03b7\u0304^j` \u2014 multiplied out for all `z, \u03b7`, and as a quotient where `z \u03b7\u0304 \u2260 1` \u2014 and `(K_ij)` is positive semidefinite.",
-      "line": 151,
+      "line": 155,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_2_b",
       "file": "Sheil/Paper/Statements.lean",
@@ -311,7 +310,7 @@
     {
       "name": "schurCohn_unique",
       "doc": "Support for Lemma 2.2(b) (\"its coefficient matrix\", P025_body.tex:208): the identity of `lem_2_2_b` determines the matrix, so `schurCohn` IS the coefficient matrix of `K(z,\u03b7)` (no hypothesis on the zeros).",
-      "line": 160,
+      "line": 164,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.schurCohn_unique",
       "file": "Sheil/Paper/Statements.lean",
@@ -326,7 +325,7 @@
     {
       "name": "lem_2_2_c",
       "doc": "Lemma 2.2(c), eq. (eq:entries), P025_body.tex:209-213 (no hypothesis on the zeros needed).",
-      "line": 166,
+      "line": 170,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_2_2_c",
       "file": "Sheil/Paper/Statements.lean",
@@ -341,7 +340,7 @@
     {
       "name": "exists_max_circle",
       "doc": "Support (P025_body.tex:42, 259: \"let `|\u03b6| = 1` with `|P(\u03b6)| = M(P)`\"): `M(P)` is attained on the circle.",
-      "line": 174,
+      "line": 178,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.exists_max_circle",
       "file": "Sheil/Paper/Statements.lean",
@@ -355,8 +354,8 @@
     },
     {
       "name": "thm_3_1",
-      "doc": "Theorem 3.1, P025_body.tex:258-262 (open discs); also P025_body.tex:125 (\"That no open disc of radius larger than `M/2` lies in `P(\ud835\udd3b)` is elementary\": this row uses no cited result).",
-      "line": 179,
+      "doc": "Theorem 3.1, P025_body.tex:258-262 (open discs); also P025_body.tex:125 (\"In Theorem 3.1, that no open disc of radius larger than `M/2` lies in `P(\ud835\udd3b)` is elementary\": this row uses no cited result).",
+      "line": 183,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.thm_3_1",
       "file": "Sheil/Paper/Statements.lean",
@@ -371,7 +370,7 @@
     {
       "name": "lem_3_2",
       "doc": "Lemma 3.2, P025_body.tex:269-272 (\"it also covers polynomials of degree less than `n`\", P025_body.tex:267).",
-      "line": 187,
+      "line": 191,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_3_2",
       "file": "Sheil/Paper/Statements.lean",
@@ -386,7 +385,7 @@
     {
       "name": "lem_3_2_closed",
       "doc": "Support for Lemma 3.2 (P025_body.tex:264-265: de Bruijn's theorem, \"quoted in [OR74, p. 332] for open and closed circular regions\"): the CLOSED disc of Lemma 3.2 lies in the image of the closed unit disc.",
-      "line": 194,
+      "line": 198,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.lem_3_2_closed",
       "file": "Sheil/Paper/Statements.lean",
@@ -400,8 +399,8 @@
     },
     {
       "name": "prop_3_3",
-      "doc": "Proposition 3.3, P025_body.tex:280-283, with \"In particular `F'(\u03b6) \u2260 0`\" (P025_body.tex:292-293); also the Table's and the introduction's \"point of maximum modulus, where `\u03b6P'(\u03b6) = (n/2) P(\u03b6)`\" (P025_body.tex:75-76, 122), and the sketch's \"the first fact, applied at a point `\u03b6` where `|P|` is largest, places every omitted value at distance at least `M/2` from `P(\u03b6)/2`\" (P025_body.tex:138-139: the disc below, for every omitted value).",
-      "line": 203,
+      "doc": "Proposition 3.3, P025_body.tex:280-283, with \"In particular `F'(\u03b6) \u2260 0`\" (P025_body.tex:292-293); also the Table's and the introduction's \"point `\u03b6` of maximum modulus, where `\u03b6P'(\u03b6) = (n/2) P(\u03b6)`\" (P025_body.tex:75-76, 122), and the sketch's \"the first fact, applied at a point `\u03b6` where `|P|` is largest, places every omitted value at distance at least `M/2` from `P(\u03b6)/2`\" (P025_body.tex:138-139: the disc below, for every omitted value).",
+      "line": 207,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.prop_3_3",
       "file": "Sheil/Paper/Statements.lean",
@@ -416,7 +415,7 @@
     {
       "name": "thm_3_4",
       "doc": "Theorem 3.4 [Kr79, Kr80, OR74, SS74], P025_body.tex:308-311 \u2014 the ONE cited result: the Cited/ input `coef_half_max`, restated with `maxMod` and `ZerosOnCircle` (status CITED).",
-      "line": 211,
+      "line": 215,
       "direct_cited_input": "Sheil.Cited.coef_half_max",
       "qualified_name": "Sheil.Paper.thm_3_4",
       "file": "Sheil/Paper/Statements.lean",
@@ -431,8 +430,8 @@
     },
     {
       "name": "coef_note_trig",
-      "doc": "The note after Theorem 3.4, P025_body.tex:313-319 (claim N2; `n = 2m`, `m = n/2`). For `P` of degree `2m \u2265 2` with all zeros on the unit circle: by Lemma 2.1 `P* = \u03bbP` with `|\u03bb| = 1`; for EVERY such `\u03bb`, `Q(\u03b8) = e^{-im\u03b8} P(e^{i\u03b8})` (`= trigT 1 m P \u03b8`) satisfies `conj Q = \u03bb Q` (real `\u03b8`); a `c` with `c^2 = \u03bb` exists, and for EVERY such `c`, `T = cQ` (`= trigT c m P`) has `|c| = 1`, is real on the real line, is the trigonometric polynomial `\u03a3_{j=0}^{2m} c a_j e^{i(j-m)\u03b8}` (all complex `\u03b8`) of exact degree `m` (top coefficient `c a_n \u2260 0`); its zeros: `P` has `2m` zeros counted with multiplicity, `T(\u03b8) = 0` iff `P(e^{i\u03b8}) = 0` (complex `\u03b8`), every zero `\u03b8` of `T` is real, and `t \u21a6 e^{it}` maps the zeros of `T` in the period `[0, 2\u03c0)` one-to-one onto the zeros of `P` (\"its `2m` zeros in a period are all real\"); `max |T| = sup |T| = M(P)`; its constant term `t_0 = (1/2\u03c0) \u222b_0^{2\u03c0} T` is `c a_{n/2}`; and \"the case `k = n/2` says that the constant term `t_0` of such a `T` satisfies `|t_0| \u2264 (1/2) max |T|`\" (P025_body.tex:318-319): `|a_m| \u2264 M(P)/2` iff `|c a_m| \u2264 (1/2) sup |T|`.",
-      "line": 224,
+      "doc": "The note after Theorem 3.4, P025_body.tex:313-319 (claim N2; `n = 2m`, `m = n/2`). For `P` of degree `2m \u2265 2` with all zeros on the unit circle: by Lemma 2.1 `P* = \u03bbP` with `|\u03bb| = 1`; for EVERY such `\u03bb`, `Q(\u03b8) = e^{-im\u03b8} P(e^{i\u03b8})` (`= trigT 1 m P \u03b8`) satisfies `conj Q = \u03bb Q` (real `\u03b8`); a `c` with `c^2 = \u03bb` exists, and for EVERY such `c`, `T = cQ` (`= trigT c m P`) has `|c| = 1`, is real on the real line, is the trigonometric polynomial `\u03a3_{j=0}^{2m} c a_j e^{i(j-m)\u03b8}` (all complex `\u03b8`) of exact degree `m` (top coefficient `c a_n \u2260 0`); its zeros: `P` has `2m` zeros counted with multiplicity, `T(\u03b8) = 0` iff `P(e^{i\u03b8}) = 0` (complex `\u03b8`), every zero `\u03b8` of `T` is real, and `t \u21a6 e^{it}` maps the zeros of `T` in the period `[0, 2\u03c0)` one-to-one onto the zeros of `P` (\"whose `2m` zeros in a period are all real\"); `max |T| = sup |T| = M(P)`; its constant term `t_0 = (1/2\u03c0) \u222b_0^{2\u03c0} T` is `c a_{n/2}`; and \"the case `k = n/2` says that the constant term `t_0` of such a `T` satisfies `|t_0| \u2264 (1/2) max |T|`\" (P025_body.tex:318-319): `|a_m| \u2264 M(P)/2` iff `|c a_m| \u2264 (1/2) sup |T|`.",
+      "line": 228,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.coef_note_trig",
       "file": "Sheil/Paper/Statements.lean",
@@ -447,7 +446,7 @@
     {
       "name": "cor_3_5",
       "doc": "Corollary 3.5, P025_body.tex:321-323 (Theorem 3.1 with Theorem 3.4: this row passes the cited result).",
-      "line": 246,
+      "line": 250,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.cor_3_5",
       "file": "Sheil/Paper/Statements.lean",
@@ -463,7 +462,7 @@
     {
       "name": "thm_4_1",
       "doc": "Theorem 4.1 (the covering theorem), P025_body.tex:334-340; abstract P025_body.tex:15-16; Table P025_body.tex:69-70; P025_body.tex:84-87. Its only input beyond Lean's three standard ones is the cited Theorem 3.4 (the abstract's Lean sentence, P025_body.tex:30-31: \"with the coefficient bound ... taken as given\").",
-      "line": 254,
+      "line": 258,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.thm_4_1",
       "file": "Sheil/Paper/Statements.lean",
@@ -479,7 +478,7 @@
     {
       "name": "thm_4_1_case1",
       "doc": "Theorem 4.1, Case 1 (`a_0 = 0`), P025_body.tex:346-353; idea of the proof P025_body.tex:139-140.",
-      "line": 259,
+      "line": 263,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.thm_4_1_case1",
       "file": "Sheil/Paper/Statements.lean",
@@ -494,7 +493,7 @@
     {
       "name": "thm_4_1_normalize",
       "doc": "Theorem 4.1, Case 2, the normalization, P025_body.tex:355-357 (idea P025_body.tex:140: \"we normalize so that `a_0 = a_n = 1`\"): `a_n \u2260 0`, `P` has degree `n`; for `|\u03b1| = 1` with `\u03b1^n = a_0/a_n`, `Q(z) = P(\u03b1z)/a_0` has `q_0 = q_n = 1`, degree at most `n`, (eq:mirror), `Q(\ud835\udd3b) = P(\ud835\udd3b)/a_0`, and `A(Q) = A/|a_0| \u2265 1`.",
-      "line": 268,
+      "line": 272,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.thm_4_1_normalize",
       "file": "Sheil/Paper/Statements.lean",
@@ -509,7 +508,7 @@
     {
       "name": "thm_4_1_case2_diag",
       "doc": "Theorem 4.1, Case 2 (`a_0 = a_n = 1`), P025_body.tex:359-365; idea P025_body.tex:140-141: every diagonal entry of the Schur-Cohn matrix of `H = P - w` equals `d = |1 - w|^2 - 1`; for an omitted `w`, `|w - 1| \u2265 1`; if `A = 1`, `D(1,1) \u2286 P(\ud835\udd3b)`.",
-      "line": 282,
+      "line": 286,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.thm_4_1_case2_diag",
       "file": "Sheil/Paper/Statements.lean",
@@ -524,7 +523,7 @@
     {
       "name": "sketch_disc_one",
       "doc": "The idea of the proof, P025_body.tex:140-141 (coverage link): with `a_0 = a_n = 1`, \"the diagonal entries `K_jj` all equal `|1-w|^2-1 \u2265 0`, so `|1-w| \u2265 1`, which gives `D(1,1) \u2282 P(\ud835\udd3b)`\" \u2014 every omitted `w` has `|1-w|^2 - 1 \u2265 0` and `|1-w| \u2265 1`, and `D(1,1) \u2286 P(\ud835\udd3b)` for EVERY `A`.",
-      "line": 292,
+      "line": 296,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.sketch_disc_one",
       "file": "Sheil/Paper/Statements.lean",
@@ -539,7 +538,7 @@
     {
       "name": "eq_minor",
       "doc": "Eq. (eq:minor), P025_body.tex:367-372; idea P025_body.tex:142-144: if `A > 1` (with `a_0 = a_n = 1`), `A` is attained at some `1 \u2264 j \u2264 n-1`; for every such `j`, `E = a_{n-j}/conj(a_j)` has `|E| = 1` (and does not depend on `w`), and every omitted `w` (`u = w - 1`) has `A |u + E| \u2264 |u|^2 - 1`.",
-      "line": 300,
+      "line": 304,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.eq_minor",
       "file": "Sheil/Paper/Statements.lean",
@@ -554,7 +553,7 @@
     {
       "name": "eq_punctured",
       "doc": "Eq. (eq:punctured), P025_body.tex:373-378; idea P025_body.tex:143-144 (\"`|w-(1+E)| \u2265 A` unless `w = 1-E`. Consequently every value in `D(1+E,A)` is taken, except possibly the single value `w_* = 1-E`\"): `D(1+E, A) \\ {w_*} \u2286 P(\ud835\udd3b)`.",
-      "line": 312,
+      "line": 316,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.eq_punctured",
       "file": "Sheil/Paper/Statements.lean",
@@ -569,7 +568,7 @@
     {
       "name": "thm_4_1_wstar",
       "doc": "Theorem 4.1, Case 2, P025_body.tex:380-384; idea P025_body.tex:144-146: if `w_* = 1 - E` is omitted, then `S = P - w_*` has degree `n`, constant term `E`, leading coefficient 1, all zeros on the unit circle, `A(S) = A`, and `P(\ud835\udd3b) = S(\ud835\udd3b) + w_*`.",
-      "line": 322,
+      "line": 326,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.thm_4_1_wstar",
       "file": "Sheil/Paper/Statements.lean",
@@ -584,7 +583,7 @@
     {
       "name": "rem_4_2_dist",
       "doc": "Remark 4.2, P025_body.tex:388-389: `|w_* - (1+E)| = 2`, so `w_*` lies in `D(1+E, A)` only when `A > 2`.",
-      "line": 336,
+      "line": 340,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_dist",
       "file": "Sheil/Paper/Statements.lean",
@@ -599,7 +598,7 @@
     {
       "name": "rem_4_2_no_coef",
       "doc": "Remark 4.2, P025_body.tex:388-390: Theorem 3.4 \"is needed only when `A > 2|a_0|` and `w_*` is omitted\" \u2014 (i) without any cited input, Theorem 4.1 holds when `a_0 = 0` or `A \u2264 2|a_0|`.",
-      "line": 341,
+      "line": 345,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_no_coef",
       "file": "Sheil/Paper/Statements.lean",
@@ -614,7 +613,7 @@
     {
       "name": "rem_4_2_wstar_taken",
       "doc": "Remark 4.2, P025_body.tex:380, 389-390 \u2014 (ii) without any cited input, when `w_*` is taken (normalized `P`): \"otherwise (eq:punctured) already gives `D(1+E,A) \u2282 P(\ud835\udd3b)`\".",
-      "line": 348,
+      "line": 352,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_wstar_taken",
       "file": "Sheil/Paper/Statements.lean",
@@ -629,7 +628,7 @@
     {
       "name": "rem_4_2_off_middle",
       "doc": "Remark 4.2, P025_body.tex:391-392: \"if `A` is attained at some index `j \u2260 n/2`, then `A(S) = |a_j|` with `j \u2260 n/2`, and [OR74, Theorem 3] or [SS74, Theorem 3] suffices\": Theorem 4.1 follows from the coefficient bound for `k \u2260 n/2` alone (hypothesis `hOR`, the statement of [OR74, Thm 3] and [SS74, Thm 3] for `k \u2260 n/2`).",
-      "line": 359,
+      "line": 363,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_off_middle",
       "file": "Sheil/Paper/Statements.lean",
@@ -644,7 +643,7 @@
     {
       "name": "rem_4_2_middle_only",
       "doc": "Support for Remark 4.2, P025_body.tex:392-393: the middle case is not needed unless `n` is even and `|a_{n/2}|` is strictly larger than every other `|a_k|` (the first two of the four conditions of `rem_4_2_middle_used_only`).",
-      "line": 369,
+      "line": 373,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_middle_only",
       "file": "Sheil/Paper/Statements.lean",
@@ -659,7 +658,7 @@
     {
       "name": "rem_4_2_middle_used_only",
       "doc": "Remark 4.2, P025_body.tex:392-393 (coverage link): \"the middle case of Theorem 3.4, due to Kristiansen, is used only when `n` is even, `|a_{n/2}|` is strictly larger than every other `|a_k|` and than `2|a_0|`, and `w_*` is omitted\": unless all four hold, Theorem 4.1 follows from the bound for `k \u2260 n/2` alone (hypothesis `hOR`). `w_*` is `1 - E` for the normalized `Q = P(\u03b1z)/a_0` and `j = n/2`; \"`w_*` is omitted\" is stated for every admissible `\u03b1` (with `a_0 \u2260 0`: Case 1 has no `w_*`).",
-      "line": 382,
+      "line": 386,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_middle_used_only",
       "file": "Sheil/Paper/Statements.lean",
@@ -674,7 +673,7 @@
     {
       "name": "rem_4_2_equiv",
       "doc": "Remark 4.2, P025_body.tex:393-395: \"The middle case cannot be bypassed: by Theorem 3.1, for polynomials with all zeros on the unit circle Theorem 4.1 is equivalent to Theorem 3.4\": the covering statement is equivalent to the coefficient bound, and, given the cases `k \u2260 n/2`, to the middle case.",
-      "line": 397,
+      "line": 401,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.rem_4_2_equiv",
       "file": "Sheil/Paper/Statements.lean",
@@ -688,8 +687,8 @@
     },
     {
       "name": "ex_5_1",
-      "doc": "Example 5.1, P025_body.tex:433-436 and P025_body.tex:110-111.",
-      "line": 407,
+      "doc": "Example 5.1, P025_body.tex:433-436 and P025_body.tex:110-111; Figure 1's caption, P025_body.tex:102 (\"`A` is the best radius that holds for all of them\").",
+      "line": 412,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.ex_5_1",
       "file": "Sheil/Paper/Statements.lean",
@@ -703,8 +702,8 @@
     },
     {
       "name": "ex_5_2",
-      "doc": "Example 5.2, P025_body.tex:440-451 (\"here `E = 1`, and `w_* = 0` is taken because `P(z) = 0` when `z^m` is the root of `t^2+at+1` in `(-1,0)` ..., so the disc of the proof is `D(2,a)`\", P025_body.tex:448-450).",
-      "line": 415,
+      "doc": "Example 5.2, P025_body.tex:440-451 (\"here `E = 1`, and `w_* = 0` is taken because `P(z) = 0` when `z^m` is the root of `t^2+at+1` in `(-1,0)` ..., so the disc of the proof is `D(2,a)`\", P025_body.tex:448-450); with Example 5.1, Figure 1's caption, P025_body.tex:102.",
+      "line": 420,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.ex_5_2",
       "file": "Sheil/Paper/Statements.lean",
@@ -719,7 +718,7 @@
     {
       "name": "fig2_cardioid",
       "doc": "Figure 2, left (caption P025_body.tex:426-428; label P025_body.tex:412): `(1+z)^2` maps the circle onto the cardioid `\u03c1 = 2 + 2 cos \u03c8`; `P(\ud835\udd3b)` is the region it bounds (`0 < \u03c1 < 2 + 2 cos \u03c8`, `w = \u03c1 e^{i\u03c8}`); all zeros on the circle; `M = 4`, `A = 2`; the largest disc inside is `D(2,2)` (radius `M/2 = A`, and no other disc of radius 2 lies inside).",
-      "line": 433,
+      "line": 438,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.fig2_cardioid",
       "file": "Sheil/Paper/Statements.lean",
@@ -734,7 +733,7 @@
     {
       "name": "fig2_limacon",
       "doc": "Figure 2, right (caption P025_body.tex:428-430; label P025_body.tex:424; picture P025_body.tex:415-425): `1 + 4z + z^2` maps the circle onto the lima\u00e7on `\u03c1 = 4 + 2 cos \u03c8`; `P(\ud835\udd3b)` is the region it bounds (`\u03c1 < 4 + 2 cos \u03c8`); it lies in the strip `-2 < Re w < 6`; the disc `D(2,4)` lies in it and has the largest possible radius `A = 4`; and \"the grey disc is `D(3,3)`, of radius `M/2`\" (P025_body.tex:430): `M = 6` and `D(3,3) \u2286 P(\ud835\udd3b)`.",
-      "line": 446,
+      "line": 451,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.fig2_limacon",
       "file": "Sheil/Paper/Statements.lean",
@@ -749,7 +748,7 @@
     {
       "name": "abs_self_inversive",
       "doc": "Abstract P025_body.tex:13-15, Table P025_body.tex:69-70, P025_body.tex:86-87: Sheil-Small's question has the answer yes: every self-inversive `P` maps `\ud835\udd3b` onto a domain containing an open disc of radius `A`.",
-      "line": 459,
+      "line": 464,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.abs_self_inversive",
       "file": "Sheil/Paper/Statements.lean",
@@ -765,7 +764,7 @@
     {
       "name": "abs_zeros_conj_inv",
       "doc": "Abstract P025_body.tex:16-17 (\"the self-inversive polynomials, whose zeros are symmetric with respect to the unit circle\"), P025_body.tex:46-47 and 109-110 (Sheil-Small's own reading, zeros symmetric under `\u03b6 \u21a6 1/\u03b6\u0304`): such a `P` (degree `\u2265 1`, `P(0) \u2260 0`) has an open disc of radius `A` in `P(\ud835\udd3b)`.",
-      "line": 465,
+      "line": 470,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.abs_zeros_conj_inv",
       "file": "Sheil/Paper/Statements.lean",
@@ -781,7 +780,7 @@
     {
       "name": "abs_zeros_inv",
       "doc": "Abstract P025_body.tex:17-19 (\"the polynomials whose zeros, with multiplicity, are symmetric under taking reciprocals (the literal reading of the problem as printed)\"), P025_body.tex:106-110, the problem as printed P025_body.tex:55-57 (zeros symmetric under `\u03b6 \u21a6 1/\u03b6`).",
-      "line": 471,
+      "line": 476,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.abs_zeros_inv",
       "file": "Sheil/Paper/Statements.lean",
@@ -796,8 +795,8 @@
     },
     {
       "name": "abs_plus_minus",
-      "doc": "P025_body.tex:107 (the literal reading in coefficient form, `a_{n-k} = \u00b1a_k`, non-constant; Figure 1's dashed oval, P025_body.tex:97-98).",
-      "line": 476,
+      "doc": "P025_body.tex:107 (the literal reading in coefficient form, `a_{n-k} = \u00b1a_k`, non-constant; Figure 1's caption, P025_body.tex:98).",
+      "line": 481,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.abs_plus_minus",
       "file": "Sheil/Paper/Statements.lean",
@@ -812,8 +811,8 @@
     },
     {
       "name": "intro_covering_implies_coef",
-      "doc": "P025_body.tex:127-129: \"By Theorem 3.1, a positive answer for self-inversive polynomials also implies the theorem of O'Hara-Rodriguez, Saff-Sheil-Small and Kristiansen, so any proof of this answer also proves that theorem\": the covering statement for the polynomials with all zeros on the circle (a subclass of the self-inversive ones, so this row assumes less) implies Theorem 3.4.",
-      "line": 483,
+      "doc": "P025_body.tex:127-129: \"By Theorem 3.1, a positive answer for self-inversive polynomials also implies the inequality `M \u2265 2A` of O'Hara-Rodriguez, Saff-Sheil-Small and Kristiansen for polynomials with all zeros on the unit circle, so any proof of this answer also proves that inequality\": the covering statement for the polynomials with all zeros on the circle (a subclass of the self-inversive ones, so this row assumes less) implies that inequality, in the form of Theorem 3.4.",
+      "line": 489,
       "direct_cited_input": null,
       "qualified_name": "Sheil.Paper.intro_covering_implies_coef",
       "file": "Sheil/Paper/Statements.lean",
@@ -824,6 +823,22 @@
       ],
       "checks": [],
       "status": "PROVED"
+    },
+    {
+      "name": "fig1_example",
+      "doc": "Figure 1 (caption P025_body.tex:96-97; the figure's words \"as here\", \"with largest coefficient `A=5`\", \"disc of radius `A`\" and \"`A=5`\" on the radius): `1 + z + 5z^2 + z^3 + z^4` is self-inversive, `A = 5`, its zeros lie off the unit circle, and `P(\ud835\udd3b)` contains an open disc of radius 5 (Theorem 4.1).",
+      "line": 497,
+      "direct_cited_input": null,
+      "qualified_name": "Sheil.Paper.fig1_example",
+      "file": "Sheil/Paper/Statements.lean",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "Sheil.Cited.coef_half_max",
+        "propext"
+      ],
+      "checks": [],
+      "status": "PROVED-FROM-CITED"
     }
   ],
   "computer_checks": [],

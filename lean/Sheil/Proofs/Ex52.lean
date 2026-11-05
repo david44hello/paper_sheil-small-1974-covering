@@ -1,4 +1,4 @@
-/- Sheil/Proofs/Ex52.lean — proofs of the rows ex_5_2 of Sheil/Paper/Statements.lean.
+/- Sheil/Proofs/Ex52.lean — proofs of the row ex_5_2 of Sheil/Paper/Statements.lean.
 Copyright (C) Dave Goel 2026--now. All rights reserved. -/
 import Mathlib
 import Sheil.Defs.Basic

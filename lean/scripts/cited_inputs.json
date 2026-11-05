@@ -1,6 +1,5 @@
 {
-  "version": "0.70",
-  "project": "025",
+  "version": "0.80",
   "note": "The cited results the proof may use (an allowlist for scripts/audit.py). Each item needs name, source, review, and status (refereed or UNREFEREED). This file is a review allowlist, not a proof of source fidelity.",
   "inputs": [
     {

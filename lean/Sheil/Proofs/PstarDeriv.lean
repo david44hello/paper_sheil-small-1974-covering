@@ -1,4 +1,4 @@
-/- Sheil/Proofs/PstarDeriv.lean — proofs of the rows lem_2_2_a_pstar of Sheil/Paper/Statements.lean.
+/- Sheil/Proofs/PstarDeriv.lean — proofs of the row lem_2_2_a_pstar of Sheil/Paper/Statements.lean.
 Copyright (C) Dave Goel 2026--now. All rights reserved. -/
 import Sheil.Proofs.MaxPoint
 

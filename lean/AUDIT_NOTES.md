@@ -1,6 +1,6 @@
-# AUDIT_NOTES — project 025 Lean (Sheil-Small's (1974) covering problem has a positive answer): modelling and route notes
+# AUDIT_NOTES — Lean proof of "Sheil-Small's (1974) covering problem has a positive answer": modelling and route notes
 
-Every row of `Sheil/Paper/Statements.lean` is one printed claim (or one part of a claim), named by the paper's numbering;
+Every row of `Sheil/Paper/Statements.lean` except the retired row `fig1_regions` (section E) is one printed claim, one part of a claim, or a support step, named by the paper's numbering;
 its docstring gives the paper lines. `AUDIT.md` (made by `scripts/audit.py`) lists each row's axioms; `CLAIM_MAP.tsv`
 maps every printed claim to its rows (`scripts/census.py` prints the census). This file records what a reader must know
 to judge that the Lean statements say what the paper says. Paper author: Dave Goel. Copyright (C) Dave Goel 2026--now.
@@ -30,9 +30,9 @@ to judge that the Lean statements say what the paper says. Paper author: Dave Go
   it IS the coefficient matrix of `K(z,η)` (so no choice is hidden in the definition). `normalizeAt P α` = `P(αz)/a_0`.
 - `trigT c m P θ` = `c e^{-imθ} P(e^{iθ})` for complex `θ` (the note after Theorem 3.4): `trigT 1` is the paper's `Q`,
   `trigT c` its `T = cQ`.
-- Examples: `polyThreeI`, `polyFour`, `polyOnePlusPow n`, `polyLimacon a m`, `polyCardioid` are the printed
-  polynomials; the four Figure 1 witnesses (`polyOnePlusSq`, `polyXSubI`, `polySelfInvOnly`, `polyMirrorOnly`) show
-  that every region the figure draws is non-empty (row `fig1_regions`).
+- Examples: `polyThreeI`, `polyFour`, `polyFive`, `polyOnePlusPow n`, `polyLimacon a m`, `polyCardioid` are the printed
+  polynomials; `polyOnePlusSq`, `polyXSubI`, `polySelfInvOnly`, `polyMirrorOnly` are not printed: they are witnesses of
+  the retired row `fig1_regions` (section E).
 
 ## B. The ONE cited input (Sheil/Cited/CoefHalfMax.lean; scripts/cited_inputs.json)
 - `Sheil.Cited.coef_half_max` = Theorem 3.4 exactly: `deg P = n ≥ 1`, all zeros on the unit circle, then
@@ -44,7 +44,7 @@ to judge that the Lean statements say what the paper says. Paper author: Dave Go
   Hayman-Lingham 2019, Update 4.2, both quoted). Status: refereed. The Lean text was checked against the sources
   before use, and again by an independent reviewer.
 - Layout: no proof file imports `Cited/`; the cited bound enters proofs as the hypothesis type
-  `HypCoef` (Sheil/Proofs/Rows.lean), and only `Statements.lean` applies the cited input (row `cor_3_5`).
+  `HypCoef` (Sheil/Proofs/Rows.lean), and only `Statements.lean` applies the cited input (rows `thm_3_4` and `cor_3_5`).
 - Rows whose CONCLUSION is (part of) Theorem 3.4 are proved WITHOUT the cited input (else they would be empty):
   `intro_covering_implies_coef`, `rem_4_2_equiv`; the Remark 4.2 rows `rem_4_2_off_middle`, `rem_4_2_middle_only`,
   `rem_4_2_middle_used_only` assume only `hOR` = the published bound for `k ≠ n/2` ([OR74, Thm 3] = [SS74, Thm 3]) as an
@@ -68,15 +68,18 @@ to judge that the Lean statements say what the paper says. Paper author: Dave Go
 ## D. Formalization choices for running text (CLAIM_MAP.tsv has every claim)
 - The abstract's classes are stated at `n = deg P`: rows `abs_self_inversive`, `abs_zeros_conj_inv`, `abs_zeros_inv`,
   `abs_plus_minus` (Theorem 4.1 with `n = deg P`); "a domain" = open and connected (row `abs_domain`).
-- The note after Theorem 3.4 (row `coef_note_trig`): "its 2m zeros in a period are all real" is stated through the zeros
+- The note after Theorem 3.4 (row `coef_note_trig`): "whose 2m zeros in a period are all real" is stated through the zeros
   of `P` — `P` has `2m` zeros with multiplicity, `T(θ) = 0` iff `P(e^{iθ}) = 0` (complex `θ`), every zero of `T` is real,
   and `t ↦ e^{it}` maps the zeros of `T` in `[0, 2π)` one-to-one onto the zeros of `P`. The zeros of a trigonometric
   polynomial of degree `m` are, by definition, those of the algebraic polynomial `z^m T`, here `c P(z)`; multiplicities
   of an entire function of `θ` would add nothing the note uses. `max |T|` is stated as the supremum (attained).
 - Example 5.2's "`w_* = 0` is taken because `P(z) = 0` when `z^m` is the root of `t^2+at+1` in `(-1,0)`" is the row's
   clause "P has a zero in 𝔻".
-- Lemma 3.2's relation to de Bruijn's theorem is attribution (NOT COUNTED); row `lem_3_2_closed` (the closed-region
-  case) is a support row of the claim L32.
+- Lemma 3.2's relation to de Bruijn's theorem is attribution and route words (NOT COUNTED); row `lem_3_2_closed` (the
+  closed-region case) is a support row of the claim L32.
+- Figure 1 (row `fig1_example`): the row states the facts the caption and the figure's words print about
+  `1 + z + 5z^2 + z^3 + z^4`. The drawing itself carries no claim beyond its words ("drawn to scale" is NOT COUNTED), and
+  neither does Figure 3, whose caption only names the drawn objects.
 - Coverage links (a running-text claim one step from a row gets its own row): `lem_2_2_a_pstar` (the remark
   before Lemma 2.2), `sketch_disc_one` (the sketch's `D(1,1) ⊂ P(𝔻)` for every `A`), `rem_4_2_middle_used_only`
   (Remark 4.2's four conditions for the middle case).
@@ -84,29 +87,32 @@ to judge that the Lean statements say what the paper says. Paper author: Dave Go
   a row that is true WITH an exception does not cover a sentence WITHOUT it.
 
 ## E. The paper's text
-- Every `P025_body.tex:<line>` pointer and every quote names a line of the paper's TeX source as published (tag v2.30,
-  `P025_body.tex` md5 1538df2f5460d3b01212901be2ed10d5). Each pointer was checked against that file.
+- Every `P025_body.tex:<line>` pointer and every quote names a line of the paper's TeX source, version 3.10
+  (`P025_body.tex`, md5 cf31abd0a7b679ed1bf7c66772c19983), which is not part of this repository. Each pointer was checked
+  against that file.
 - Exceptions are kept exactly: the minor gives `|w-(1+E)| ≥ A` only "unless `w = 1-E`" (row `eq_punctured`: the
   punctured disc `D(1+E,A) \ {1-E}` lies in `P(𝔻)`); no row drops an exception that the text states.
 - Claim I4 of the census ("polynomials whose zeros all lie on the unit circle are the basic examples") is not in the
-  published text; its row `lem_2_1_circle` remains and covers L21d.
+  paper's text; its row `lem_2_1_circle` remains and covers L21d.
+- Row `fig1_regions` is retired, kept and not counted: Figure 1 now draws one polynomial's image, not regions of
+  classes, so the text no longer prints this claim. The row's theorem is unchanged and still proved.
 
 ## F. Tree hygiene
 - `./check.sh` (README) runs `scripts/check.sh --final`: build, banned words (`sorry`, `admit`, `native_decide`, ... and
   `axiom` outside Cited/), the audit, the final gate. Lean runs with one thread.
-- Not part of the published folder: backups, logs, `scripts/audit_output.log` (rewritten on every audit run), `.lake/`.
+- Not part of this folder: backups, logs, `scripts/audit_output.log` (rewritten on every audit run), `.lake/`.
 
 ## G. Counts and kernel replay
-- Rows (`AUDIT.md`): 54 rows in `Sheil/Paper/Statements.lean` = 47 PROVED + 6 PROVED-FROM-CITED + 1 CITED + 0 OPEN.
-  The CITED row is `thm_3_4` (Theorem 3.4 itself); the 6 PROVED-FROM-CITED rows are `cor_3_5`, `thm_4_1`,
-  `abs_self_inversive`, `abs_zeros_conj_inv`, `abs_zeros_inv`, `abs_plus_minus`. Every other row's `#print axioms`
-  lists only propext, Classical.choice and Quot.sound.
-- Census (`CLAIM_MAP.tsv`, `scripts/census.py`): 52 printed claims = 44 PROVED + 7 PROVED-FROM-CITED + 1 CITED
+- Rows (`AUDIT.md`): 55 rows in `Sheil/Paper/Statements.lean` = 47 PROVED + 7 PROVED-FROM-CITED + 1 CITED + 0 OPEN (one
+  of the 47 is the retired row `fig1_regions`). The CITED row is `thm_3_4` (Theorem 3.4 itself); the 7 PROVED-FROM-CITED
+  rows are `cor_3_5`, `thm_4_1`, `abs_self_inversive`, `abs_zeros_conj_inv`, `abs_zeros_inv`, `abs_plus_minus`,
+  `fig1_example`. Every other row's `#print axioms` lists only propext, Classical.choice and Quot.sound.
+- Census (`CLAIM_MAP.tsv`, `scripts/census.py`): 52 printed claims = 43 PROVED + 8 PROVED-FROM-CITED + 1 CITED
   (T34 = Theorem 3.4) + 0 OPEN.
 - Kernel replay of this code (Lean 4 v4.35.0, Mathlib v4.35.0), one thread:
-  - leanchecker, olean replay: all 23 modules that declare constants, PASS.
-  - Export of every safe `Sheil` constant with its dependencies (555 constants, 56,563 declaration records), checked
-    from an empty environment: leanchecker PASS, leanchecker-paranoid PASS, lean4lean PASS (56,560 declarations),
-    nanoda PASS (59,310 declarations). con-leche and con-ron decline any export that contains a non-standard axiom
+  - leanchecker, olean replay: all 24 modules that declare constants, PASS.
+  - Export of every safe `Sheil` constant with its dependencies (571 constants, 56,580 declaration records), checked
+    from an empty environment: leanchecker PASS, leanchecker-paranoid PASS, lean4lean PASS (56,577 declarations),
+    nanoda PASS (59,327 declarations). con-leche and con-ron decline any export that contains a non-standard axiom
     (here `Sheil.Cited.coef_half_max`), so they did not run.
   - Axioms in the export: propext, Quot.sound, Classical.choice, `Sheil.Cited.coef_half_max`.

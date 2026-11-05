@@ -163,3 +163,5 @@ run_cmd SheilAudit.inspect ``Sheil.Paper.abs_zeros_inv "abs_zeros_inv"
 run_cmd SheilAudit.inspect ``Sheil.Paper.abs_plus_minus "abs_plus_minus"
 #print axioms Sheil.Paper.intro_covering_implies_coef
 run_cmd SheilAudit.inspect ``Sheil.Paper.intro_covering_implies_coef "intro_covering_implies_coef"
+#print axioms Sheil.Paper.fig1_example
+run_cmd SheilAudit.inspect ``Sheil.Paper.fig1_example "fig1_example"

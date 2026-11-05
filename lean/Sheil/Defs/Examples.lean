@@ -1,4 +1,4 @@
-/- Sheil/Defs/Examples.lean — definitions (polyThreeI, polyFour, polyOnePlusPow, polyLimacon, polyCardioid, polyOnePlusSq, polyXSubI, polySelfInvOnly, ...).
+/- Sheil/Defs/Examples.lean — definitions (polyThreeI, polyFour, polyOnePlusPow, polyLimacon, polyCardioid, polyFive, polyOnePlusSq, polyXSubI, ...).
 Copyright (C) Dave Goel 2026--now. All rights reserved. -/
 import Sheil.Defs.Basic
 
@@ -21,16 +21,19 @@ noncomputable def polyLimacon (a : ℝ) (m : ℕ) : ℂ[X] := 1 + C (a : ℂ) * 
 /-- `(1 + z)^2` (Figure 2, P025_body.tex:412, 426). -/
 noncomputable def polyCardioid : ℂ[X] := (1 + X) ^ 2
 
-/-- Figure 1 witnesses (fig_classes_pair.tex: "ovals overlap as the classes do (1+z^2 is in all three)"). -/
+/-- `1 + z + 5z^2 + z^3 + z^4` (Figure 1, P025_body.tex:96). -/
+noncomputable def polyFive : ℂ[X] := 1 + X + C 5 * X ^ 2 + X ^ 3 + X ^ 4
+
+/-- Witness of the retired row `fig1_regions`: `1 + z^2` (in all three classes). -/
 noncomputable def polyOnePlusSq : ℂ[X] := 1 + X ^ 2
 
-/-- Figure 1 witness: `z - i` (all zeros on the circle, not `a_{n-k} = ±a_k`). -/
+/-- Witness of the retired row `fig1_regions`: `z - i` (all zeros on the circle, not `a_{n-k} = ±a_k`). -/
 noncomputable def polyXSubI : ℂ[X] := X - C Complex.I
 
-/-- Figure 1 witness: `z^2 - (5/2) i z - 1 = (z - 2i)(z - i/2)` (self-inversive only). -/
+/-- Witness of the retired row `fig1_regions`: `z^2 - (5/2) i z - 1 = (z - 2i)(z - i/2)` (self-inversive only). -/
 noncomputable def polySelfInvOnly : ℂ[X] := X ^ 2 - C (5 / 2 * Complex.I) * X - 1
 
-/-- Figure 1 witness: `1 + z + i z^2` (condition (eq:mirror) only). -/
+/-- Witness of the retired row `fig1_regions`: `1 + z + i z^2` (condition (eq:mirror) only). -/
 noncomputable def polyMirrorOnly : ℂ[X] := 1 + X + C Complex.I * X ^ 2
 
 end Sheil

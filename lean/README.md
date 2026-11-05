@@ -9,7 +9,7 @@ This folder is a Lean 4 proof of the paper's results.
 Install Git, Lean (https://lean-lang.org/install/), Python 3 and ripgrep, then run:
 
 ```bash
-git clone --branch v2.30 --single-branch https://github.com/david44hello/paper_sheil-small-1974-covering.git
+git clone --branch v3.10 --single-branch https://github.com/david44hello/paper_sheil-small-1974-covering.git
 cd paper_sheil-small-1974-covering/lean
 ./check.sh
 ```

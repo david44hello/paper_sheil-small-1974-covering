@@ -271,7 +271,7 @@ def main_audit():
             for item in items]
     report, counts = render(rows, checks, omitted)
     (PROJECT / "AUDIT.md").write_text(report)
-    (PROJECT / "CLAIMS.json").write_text(json.dumps({"version": "0.30", "project": "025", "namespace": NAMESPACE,
+    (PROJECT / "CLAIMS.json").write_text(json.dumps({"version": "0.30", "namespace": NAMESPACE,
         "counts": counts, "claims": rows, "computer_checks": checks, "not_formalized": omitted}, indent=2) + "\n")
     print("AUDIT: " + json.dumps(counts, sort_keys=True))
     if counts.get("VIOLATION"): fail("VIOLATION rows present")

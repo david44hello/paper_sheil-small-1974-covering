@@ -1,4 +1,4 @@
-/- Sheil/Proofs/TrigNote.lean — proofs of the rows coef_note_trig of Sheil/Paper/Statements.lean.
+/- Sheil/Proofs/TrigNote.lean — proofs of the row coef_note_trig of Sheil/Paper/Statements.lean.
 Copyright (C) Dave Goel 2026--now. All rights reserved. -/
 import Sheil.Proofs.Lemma21
 import Sheil.Proofs.Lemma22

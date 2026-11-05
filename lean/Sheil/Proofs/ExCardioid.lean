@@ -1,4 +1,4 @@
-/- Sheil/Proofs/ExCardioid.lean — proofs of the rows fig2_cardioid of Sheil/Paper/Statements.lean.
+/- Sheil/Proofs/ExCardioid.lean — proofs of the row fig2_cardioid of Sheil/Paper/Statements.lean.
 Copyright (C) Dave Goel 2026--now. All rights reserved. -/
 import Mathlib
 import Sheil.Defs.Basic

@@ -1,6 +1,6 @@
 /-
 Sheil/Paper/Statements.lean — one Lean theorem per claim of the paper "Sheil-Small's (1974) covering problem has a
-positive answer" (Dave Goel). Copyright (C) Dave Goel 2026--now. All rights reserved.
+positive answer" (Dave Goel), and the retired row `fig1_regions`. Copyright (C) Dave Goel 2026--now. All rights reserved.
 Rows are named by the paper's numbering; each docstring gives the claim's lines "P025_body.tex:<line>" of the paper's
 TeX source. Every row is proved; the status of each row, as Lean reports it, is in AUDIT.md, the printed claims are
 mapped to rows in CLAIM_MAP.tsv, and the modelling choices are in AUDIT_NOTES.md.
@@ -24,6 +24,7 @@ import Sheil.Proofs.GramPSD
 import Sheil.Proofs.PstarDeriv
 import Sheil.Proofs.TrigNote
 import Sheil.Proofs.Fig2Grey
+import Sheil.Proofs.Fig1Example
 
 namespace Sheil.Paper
 
@@ -57,7 +58,7 @@ theorem intro_ex_three_i :
     polyThreeI.natDegree = 2 ∧ PlusMinusPalindromic 2 polyThreeI ∧ ¬ SelfInversive polyThreeI :=
   intro_ex_three_i_proved
 
-/-- P025_body.tex:129-131: "For self-inversive `P` the disc of radius `M/2` still exists, but `M/2` may be smaller than
+/-- P025_body.tex:129-131: "For self-inversive `P` the disc of radius `M/2` still exists (Proposition 3.3), but `M/2` may be smaller than
 `A`: for `1 + 4z + z^2` we have `M/2 = 3` and `A = 4`"; also Figure 2's label "`1+4z+z^2`: `A=4`, `M=6`"
 (P025_body.tex:424). -/
 theorem intro_ex_four :
@@ -75,16 +76,19 @@ theorem abs_M_two_A_iff (P : ℂ[X]) :
 /-! The abstract's covering rows (abs_self_inversive, abs_zeros_conj_inv, abs_zeros_inv, abs_plus_minus) and
 intro_covering_implies_coef stand at the END of this file: Lean needs the rows they rest on (thm_3_1, thm_4_1) first. -/
 
-/-! ## Figure 1 (P025_body.tex:93-104; fig_classes_pair.tex) -/
+/-! ## Figure 1 (P025_body.tex:93-104). Row `fig1_example` stands at the END of this file: it rests on `thm_4_1`. -/
 
 /-- Figure 1: both symmetry classes lie in the class (eq:mirror), and the circle class lies in the self-inversive class
-(caption P025_body.tex:96-99; Lemma 2.1). -/
+(caption P025_body.tex:97-99; Lemma 2.1). -/
 theorem fig1_inclusions :
     (∀ P : ℂ[X], SelfInversive P → Mirror P.natDegree P) ∧
     (∀ P : ℂ[X], PlusMinusPalindromic P.natDegree P → Mirror P.natDegree P) ∧
     (∀ P : ℂ[X], 1 ≤ P.natDegree → ZerosOnCircle P → SelfInversive P) := fig1_inclusions_proved
 
-/-- Figure 1: every region the figure draws has a member ("ovals overlap as the classes do (1+z^2 is in all three)"). -/
+/-- RETIRED: the regions of an earlier Figure 1, no longer printed. Kept as a Lean example, not counted. Witnesses that
+separate the classes: `1 + z^2` is in all three; `z - i` has all zeros on the circle and is not `a_{n-k} = ±a_k`; `1 + 4z + z^2` is self-inversive and `a_{n-k} = ±a_k`
+with not all zeros on the circle; `z^2 - (5/2) i z - 1` is self-inversive only; `1 + 3iz + z^2` is `a_{n-k} = ±a_k` only; `1 + z + i z^2`
+has only condition (eq:mirror). -/
 theorem fig1_regions :
     (SelfInversive polyOnePlusSq ∧ PlusMinusPalindromic 2 polyOnePlusSq ∧ ZerosOnCircle polyOnePlusSq) ∧
     (polyXSubI.natDegree = 1 ∧ ZerosOnCircle polyXSubI ∧ ¬ PlusMinusPalindromic 1 polyXSubI) ∧
@@ -174,7 +178,7 @@ theorem lem_2_2_c (n : ℕ) (H : ℂ[X]) (j : Fin n) :
 theorem exists_max_circle (P : ℂ[X]) : ∃ ζ : ℂ, ‖ζ‖ = 1 ∧ ‖P.eval ζ‖ = maxMod P :=
   Proofs.exists_max_circle_proved P
 
-/-- Theorem 3.1, P025_body.tex:258-262 (open discs); also P025_body.tex:125 ("That no open disc of radius
+/-- Theorem 3.1, P025_body.tex:258-262 (open discs); also P025_body.tex:125 ("In Theorem 3.1, that no open disc of radius
 larger than `M/2` lies in `P(𝔻)` is elementary": this row uses no cited result). -/
 theorem thm_3_1 (P : ℂ[X]) (hdeg : 1 ≤ P.natDegree) (hz : ZerosOnCircle P) (ζ : ℂ) (hζ : ‖ζ‖ = 1)
     (hM : ‖P.eval ζ‖ = maxMod P) :
@@ -197,7 +201,7 @@ theorem lem_3_2_closed (n : ℕ) (hn : 1 ≤ n) (f : ℂ[X]) (hdeg : f.natDegree
       (fun z => f.eval z) '' Metric.closedBall (0 : ℂ) 1 := Proofs.lem_3_2_closed_proved n hn f hdeg z0 hz0 hf'
 
 /-- Proposition 3.3, P025_body.tex:280-283, with "In particular `F'(ζ) ≠ 0`" (P025_body.tex:292-293); also the Table's
-and the introduction's "point of maximum modulus, where `ζP'(ζ) = (n/2) P(ζ)`" (P025_body.tex:75-76, 122), and the
+and the introduction's "point `ζ` of maximum modulus, where `ζP'(ζ) = (n/2) P(ζ)`" (P025_body.tex:75-76, 122), and the
 sketch's "the first fact, applied at a point `ζ` where `|P|` is largest, places every omitted value at distance at
 least `M/2` from `P(ζ)/2`" (P025_body.tex:138-139: the disc below, for every omitted value). -/
 theorem prop_3_3 (n : ℕ) (F : ℂ[X]) (hdeg : F.natDegree ≤ n) (hnc : 0 < F.natDegree) (lam : ℂ) (hlam : ‖lam‖ = 1)
@@ -217,7 +221,7 @@ all zeros on the unit circle: by Lemma 2.1 `P* = λP` with `|λ| = 1`; for EVERY
 `T = cQ` (`= trigT c m P`) has `|c| = 1`, is real on the real line, is the trigonometric polynomial
 `Σ_{j=0}^{2m} c a_j e^{i(j-m)θ}` (all complex `θ`) of exact degree `m` (top coefficient `c a_n ≠ 0`); its zeros: `P` has
 `2m` zeros counted with multiplicity, `T(θ) = 0` iff `P(e^{iθ}) = 0` (complex `θ`), every zero `θ` of `T` is real, and
-`t ↦ e^{it}` maps the zeros of `T` in the period `[0, 2π)` one-to-one onto the zeros of `P` ("its `2m` zeros in a
+`t ↦ e^{it}` maps the zeros of `T` in the period `[0, 2π)` one-to-one onto the zeros of `P` ("whose `2m` zeros in a
 period are all real"); `max |T| = sup |T| = M(P)`; its constant term `t_0 = (1/2π) ∫_0^{2π} T` is `c a_{n/2}`; and "the
 case `k = n/2` says that the constant term `t_0` of such a `T` satisfies `|t_0| ≤ (1/2) max |T|`" (P025_body.tex:318-319):
 `|a_m| ≤ M(P)/2` iff `|c a_m| ≤ (1/2) sup |T|`. -/
@@ -403,7 +407,8 @@ theorem rem_4_2_equiv (P : ℂ[X]) (hdeg : 1 ≤ P.natDegree) (hz : ZerosOnCircl
 
 /-! ## Section 5 and Figure 2 -/
 
-/-- Example 5.1, P025_body.tex:433-436 and P025_body.tex:110-111. -/
+/-- Example 5.1, P025_body.tex:433-436 and P025_body.tex:110-111; Figure 1's caption, P025_body.tex:102 ("`A` is the best
+radius that holds for all of them"). -/
 theorem ex_5_1 (n : ℕ) (hn : 1 ≤ n) :
     Mirror n (polyOnePlusPow n) ∧ (polyOnePlusPow n).natDegree = n ∧ coefMaxDeg (polyOnePlusPow n) = 1 ∧
     discImage (polyOnePlusPow n) = Metric.ball 1 1 ∧
@@ -411,7 +416,7 @@ theorem ex_5_1 (n : ℕ) (hn : 1 ≤ n) :
     (∀ c : ℂ, ¬ Metric.closedBall c 1 ⊆ discImage (polyOnePlusPow n)) := ex_5_1_proved n hn
 
 /-- Example 5.2, P025_body.tex:440-451 ("here `E = 1`, and `w_* = 0` is taken because `P(z) = 0` when `z^m` is the root
-of `t^2+at+1` in `(-1,0)` ..., so the disc of the proof is `D(2,a)`", P025_body.tex:448-450). -/
+of `t^2+at+1` in `(-1,0)` ..., so the disc of the proof is `D(2,a)`", P025_body.tex:448-450); with Example 5.1, Figure 1's caption, P025_body.tex:102. -/
 theorem ex_5_2 (a : ℝ) (ha : 4 ≤ a) (m : ℕ) (hm : 1 ≤ m) :
     (∀ z : ℂ, ∀ θ : ℝ, z ^ m = Complex.exp (θ * Complex.I) →
       (polyLimacon a m).eval z = Complex.exp (θ * Complex.I) * ((a : ℂ) + 2 * Real.cos θ) ∧
@@ -471,19 +476,27 @@ theorem abs_zeros_conj_inv (P : ℂ[X]) (hdeg : 1 ≤ P.natDegree) (h0 : P.eval 
 theorem abs_zeros_inv (P : ℂ[X]) (hdeg : 1 ≤ P.natDegree) (h0 : P.eval 0 ≠ 0) (hsym : ZerosSymmInv P) :
     ∃ c : ℂ, Metric.ball c (coefMaxDeg P) ⊆ discImage P := abs_zeros_inv_of thm_4_1 P hdeg h0 hsym
 
-/-- P025_body.tex:107 (the literal reading in coefficient form, `a_{n-k} = ±a_k`, non-constant; Figure 1's dashed oval,
-P025_body.tex:97-98). -/
+/-- P025_body.tex:107 (the literal reading in coefficient form, `a_{n-k} = ±a_k`, non-constant; Figure 1's caption,
+P025_body.tex:98). -/
 theorem abs_plus_minus (P : ℂ[X]) (hdeg : 1 ≤ P.natDegree) (hP : PlusMinusPalindromic P.natDegree P) :
     ∃ c : ℂ, Metric.ball c (coefMaxDeg P) ⊆ discImage P := abs_plus_minus_of thm_4_1 P hdeg hP
 
-/-- P025_body.tex:127-129: "By Theorem 3.1, a positive answer for self-inversive polynomials also implies the theorem of
-O'Hara-Rodriguez, Saff-Sheil-Small and Kristiansen, so any proof of this answer also proves that theorem": the covering
-statement for the polynomials with all zeros on the circle (a subclass of the self-inversive ones, so this row assumes
-less) implies Theorem 3.4. -/
+/-- P025_body.tex:127-129: "By Theorem 3.1, a positive answer for self-inversive polynomials also implies the inequality
+`M ≥ 2A` of O'Hara-Rodriguez, Saff-Sheil-Small and Kristiansen for polynomials with all zeros on the unit circle, so any
+proof of this answer also proves that inequality":
+the covering statement for the polynomials with all zeros on the circle (a subclass of the self-inversive ones, so this
+row assumes less) implies that inequality, in the form of Theorem 3.4. -/
 theorem intro_covering_implies_coef
     (hcov : ∀ Q : ℂ[X], 1 ≤ Q.natDegree → ZerosOnCircle Q → ∃ c : ℂ, Metric.ball c (coefMaxDeg Q) ⊆ discImage Q) :
     ∀ P : ℂ[X], 1 ≤ P.natDegree → ZerosOnCircle P → ∀ k ≤ P.natDegree, ‖P.coeff k‖ ≤ maxMod P / 2 :=
   intro_covering_implies_coef_of thm_3_1 hcov
+
+/-- Figure 1 (caption P025_body.tex:96-97; the figure's words "as here", "with largest coefficient `A=5`", "disc of radius
+`A`" and "`A=5`" on the radius): `1 + z + 5z^2 + z^3 + z^4` is self-inversive, `A = 5`, its zeros lie off the unit circle,
+and `P(𝔻)` contains an open disc of radius 5 (Theorem 4.1). -/
+theorem fig1_example :
+    SelfInversive polyFive ∧ coefMaxDeg polyFive = 5 ∧ (∀ z : ℂ, polyFive.IsRoot z → ‖z‖ ≠ 1) ∧
+      ∃ c : ℂ, Metric.ball c 5 ⊆ discImage polyFive := fig1_example_of thm_4_1
 
 /-! ## NOT stated
 -/

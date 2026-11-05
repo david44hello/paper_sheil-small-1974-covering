@@ -137,7 +137,7 @@ theorem exs_four_not_circle : ¬ ZerosOnCircle polyFour := by
   rw [Complex.norm_real, Real.norm_eq_abs, abs_of_neg (by linarith)] at this
   linarith
 
-/-! ### The other Figure 1 witnesses -/
+/-! ### The other witnesses of the retired row `fig1_regions` -/
 
 theorem exs_sq_coeff0 : polyOnePlusSq.coeff 0 = 1 := by simp [polyOnePlusSq, coeff_one, coeff_X_pow]
 theorem exs_sq_coeff1 : polyOnePlusSq.coeff 1 = 0 := by simp [polyOnePlusSq, coeff_one, coeff_X_pow]
