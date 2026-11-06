@@ -87,8 +87,8 @@ to judge that the Lean statements say what the paper says. Paper author: Dave Go
   a row that is true WITH an exception does not cover a sentence WITHOUT it.
 
 ## E. The paper's text
-- Every `P025_body.tex:<line>` pointer and every quote names a line of the paper's TeX source, version 3.10
-  (`P025_body.tex`, md5 cf31abd0a7b679ed1bf7c66772c19983), which is not part of this repository. Each pointer was checked
+- Every `P025_body.tex:<line>` pointer and every quote names a line of the paper's TeX source, version 3.20
+  (`P025_body.tex`, md5 b1f15c4bd8c0e151b4d39a4f8a9d301d), which is not part of this repository. Each pointer was checked
   against that file.
 - Exceptions are kept exactly: the minor gives `|w-(1+E)| ≥ A` only "unless `w = 1-E`" (row `eq_punctured`: the
   punctured disc `D(1+E,A) \ {1-E}` lies in `P(𝔻)`); no row drops an exception that the text states.

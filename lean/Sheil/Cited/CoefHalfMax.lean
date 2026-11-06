@@ -6,7 +6,7 @@ namespace Sheil.Cited
 
 open Polynomial
 
-/-- Theorem 3.4 of the paper (P025_body.tex:308-311 of the FINAL text v3.10, md5 cf31abd0): if `P(z) = Σ_{k=0}^n a_k z^k` has degree
+/-- Theorem 3.4 of the paper (P025_body.tex:308-311 of the FINAL text v3.20, md5 b1f15c4b): if `P(z) = Σ_{k=0}^n a_k z^k` has degree
 `n ≥ 1` and all its zeros on the unit circle, then `|a_k| ≤ M(P)/2` for `0 ≤ k ≤ n`, `M(P) = max_{|z|=1} |P(z)|`.
 Stated with Mathlib terms only (no project definition), so that no later edit of `Sheil.Defs` can change it.
 

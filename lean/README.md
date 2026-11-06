@@ -1,6 +1,6 @@
 # Sheil-Small's (1974) covering problem has a positive answer — Lean 4 proof
 
-The paper: https://doi.org/10.5281/zenodo.23908507
+The paper's link is on the [front page of this repository](https://github.com/david44hello/paper_sheil-small-1974-covering).
 
 This folder is a Lean 4 proof of the paper's results.
 
@@ -9,7 +9,7 @@ This folder is a Lean 4 proof of the paper's results.
 Install Git, Lean (https://lean-lang.org/install/), Python 3 and ripgrep, then run:
 
 ```bash
-git clone --branch v3.10 --single-branch https://github.com/david44hello/paper_sheil-small-1974-covering.git
+git clone --branch v3.20 --single-branch https://github.com/david44hello/paper_sheil-small-1974-covering.git
 cd paper_sheil-small-1974-covering/lean
 ./check.sh
 ```

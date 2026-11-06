@@ -1,5 +1,5 @@
-# CLAIM_MAP — Sheil-Small's covering problem, short paper = the FINAL text v3.10 (P025_body.tex md5 cf31abd0, \longfalse).
-# Columns (TAB): claim id | description (P025_body.tex lines of v3.10) | REQUIRED rows | SUPPORT rows.
+# CLAIM_MAP — Sheil-Small's covering problem, short paper = the FINAL text v3.20 (P025_body.tex md5 b1f15c4b, \longfalse).
+# Columns (TAB): claim id | description (P025_body.tex lines of v3.20) | REQUIRED rows | SUPPORT rows.
 # REQUIRED: ALL comma-listed rows must be proved; claim status = its worst REQUIRED row (PROVED > PROVED FROM CITED >
 # CITED > OPEN). SUPPORT rows (proof steps, helpers) are listed for completeness and do not change the claim's status.
 # Quantifier rule: each printed quantifier and exception was compared with the row's type; a row
@@ -25,7 +25,7 @@
 # Section 2, Remark C], where the middle case ... is proved when |a_{n/2}| <= 2|a_n|"; l.392 "due to Kristiansen". The
 # problem quote (l.54-58). Proof-sketch and route wording: abstract l.24-25 ("The new case ... Schur-Cohn Hermitian form
 # ..."), l.129 "The new part of this paper ...", l.131-132 ("by another route, which we now sketch"), l.190 "The next lemma is the source of all our inequalities", l.331-332 (Section 4's route sentence; route checked:
-# thm_4_1 := thm_4_1_of (lem_2_2_b PSD) cor_3_5). Organization and pointers: l.148-151, l.157 (Zenodo), l.164-165,
+# thm_4_1 := thm_4_1_of (lem_2_2_b PSD) cor_3_5). Organization and pointers: l.148-151, l.157 (Hexagon), l.164-165,
 # l.256, l.306, "(Figure 2, right/left)" l.131 and l.302-303, "(Figure 3)" l.144, 375, "(Figure 3, right)" l.388. Statements of others' theorems are the ONE cited row
 # thm_3_4 (claim T34). Unnamed steps inside proofs are covered by their result's row (Lean follows the route).
 # RETIRED (row kept, not counted): I4 "polynomials whose zeros all lie on the unit circle are the basic examples"
