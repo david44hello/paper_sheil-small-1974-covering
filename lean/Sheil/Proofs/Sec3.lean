@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Sec3.lean — proofs of the rows exists_max_circle, lem_3_2, lem_3_2_closed of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.Lemma22
 
 namespace Sheil.Proofs

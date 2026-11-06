@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Lemma21.lean — proofs of the rows lem_2_1_a, lem_2_1_b, lem_2_1_mirror, lem_2_1_circle of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Defs.Basic
 import Sheil.Proofs.Basic
 

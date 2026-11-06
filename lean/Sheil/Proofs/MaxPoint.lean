@@ -1,5 +1,5 @@
 /- Sheil/Proofs/MaxPoint.lean — proofs of the rows prop_3_3, thm_3_1 of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.Sec3
 import Sheil.Proofs.Lemma21
 

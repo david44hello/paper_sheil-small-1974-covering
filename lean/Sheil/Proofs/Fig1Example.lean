@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Fig1Example.lean — proofs of the row fig1_example of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Defs.Examples
 import Sheil.Proofs.Rows
 

@@ -23,4 +23,4 @@ PASS (final): project builds; source policy passes; the only gaps are the listed
 
 The proof takes one published result as given: the coefficient bound of Theorem 3.4 (O'Hara and Rodriguez, Saff and Sheil-Small, Kristiansen), stated in Sheil/Cited/CoefHalfMax.lean; [AUDIT.md](AUDIT.md) and [AUDIT_NOTES.md](AUDIT_NOTES.md) show where it is used.
 
-Copyright (C) Dave Goel 2026--now. All rights reserved.
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.

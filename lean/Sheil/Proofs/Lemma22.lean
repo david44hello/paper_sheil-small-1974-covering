@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Lemma22.lean — proofs of the rows pstar_pstar, pstar_eval, pstar_norm_circle, lem_2_2_a_zero, eq_one_factor, lem_2_2_c and 1 more of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.Basic
 
 namespace Sheil.Proofs

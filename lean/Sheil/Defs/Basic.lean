@@ -1,5 +1,5 @@
 /- Sheil/Defs/Basic.lean — definitions (unitDisc, discImage, pstar, coefMax, coefMaxDeg, maxMod, normalizeAt, SelfInversive, ...).
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Mathlib
 
 namespace Sheil

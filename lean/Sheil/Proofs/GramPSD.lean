@@ -1,5 +1,5 @@
 /- Sheil/Proofs/GramPSD.lean — proofs of the rows schurCohn_posSemidef, lem_2_2_b of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.SchurIdentity
 import Sheil.Proofs.Factor
 import Sheil.Proofs.GramExpansion

@@ -1,5 +1,5 @@
 /- Sheil/Cited/CoefHalfMax.lean — the ONE cited result of the paper (Theorem 3.4), stated with Mathlib terms only, with
-its sources. Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+its sources. Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Mathlib
 
 namespace Sheil.Cited

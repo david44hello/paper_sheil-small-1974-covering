@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Ex52.lean — proofs of the row ex_5_2 of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Mathlib
 import Sheil.Defs.Basic
 import Sheil.Defs.Examples

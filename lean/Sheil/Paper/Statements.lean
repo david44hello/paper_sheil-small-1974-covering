@@ -1,6 +1,6 @@
 /-
 Sheil/Paper/Statements.lean — one Lean theorem per claim of the paper "Sheil-Small's (1974) covering problem has a
-positive answer" (Dave Goel), and the retired row `fig1_regions`. Copyright (C) Dave Goel 2026--now. All rights reserved.
+positive answer" (Dave Goel), and the retired row `fig1_regions`. Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE.
 Rows are named by the paper's numbering; each docstring gives the claim's lines "P025_body.tex:<line>" of the paper's
 TeX source. Every row is proved; the status of each row, as Lean reports it, is in AUDIT.md, the printed claims are
 mapped to rows in CLAIM_MAP.tsv, and the modelling choices are in AUDIT_NOTES.md.

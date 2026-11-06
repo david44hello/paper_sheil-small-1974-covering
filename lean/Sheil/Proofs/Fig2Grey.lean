@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Fig2Grey.lean — proofs of the rows fig2_grey_disc, fig2_limacon_full of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.ExSmall
 import Sheil.Proofs.ExLimacon
 import Sheil.Proofs.MaxPoint

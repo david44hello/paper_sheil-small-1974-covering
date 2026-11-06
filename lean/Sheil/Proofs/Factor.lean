@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Factor.lean — proofs of the row lem_2_2_factor of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.Basic
 
 namespace Sheil.Proofs

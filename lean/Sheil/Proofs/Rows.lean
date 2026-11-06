@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Rows.lean — proofs of the rows abs_M_two_A_iff, fig1_inclusions, abs_self_inversive, abs_zeros_conj_inv, abs_zeros_inv, abs_plus_minus and 9 more of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.Sec3
 import Sheil.Proofs.Sec4
 import Sheil.Proofs.Lemma21

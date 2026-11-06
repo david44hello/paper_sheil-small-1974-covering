@@ -1,5 +1,5 @@
 /- Sheil/Proofs/ExSmall.lean — proofs of the rows intro_ex_three_i, intro_ex_four, fig1_regions, ex_5_1 of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Defs.Examples
 import Sheil.Proofs.Sec4
 

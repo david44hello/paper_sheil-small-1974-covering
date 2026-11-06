@@ -1,5 +1,5 @@
 /- Sheil/Proofs/Sec4.lean — proofs of the rows thm_4_1_case1, eq_minor, eq_punctured, thm_4_1_case2_diag, thm_4_1_wstar, rem_4_2_wstar_taken and 4 more of Sheil/Paper/Statements.lean.
-Copyright (C) Dave Goel 2026--now. All rights reserved. -/
+Copyright (C) Dave Goel 2026--now. Licensed under the Apache License 2.0; see LICENSE. -/
 import Sheil.Proofs.Basic
 
 namespace Sheil
